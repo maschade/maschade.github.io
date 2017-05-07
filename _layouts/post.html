@@ -1,17 +1,42 @@
+--- 
+layout: default 
 ---
-layout: default
----
 
-<article class="post">
-  <h1>{{ page.title }}</h1>
-
-  <div class="entry">
-    {{ content }}
-  </div>
-
-  <div class="date">
-    Written on {{ page.date | date: "%B %e, %Y" }}
-  </div>
-
-  {% include disqus.html %}
+<article class="content-wrapper">
+  <section class="content-title">
+    <h1>{{ page.title }}</h1>
+    <h2>{{ page.subtitle }}</h2>
+  </section>
+  <section class="content-container">
+    <section class="content-meta">
+      <h1 class="content-meta-date">{{ page.date | date: "%B %e, %Y" }}</h1>
+      <ul class="content-meta-menu">
+        <li><a>Category A</a></li>
+        <li><a>Category B</a></li>
+        <li><a>Category C</a></li>
+      </ul>
+    </section>
+    <section class="content-main">
+      {{ content }}
+    </section>
+    <section class="content-sidebar">
+      <div class="author">
+        <p>
+          <a href="/about/">Martin Schade</a> has built four software companies which did business internationally. He now
+          works on Atlas at Stripe.
+        </p>
+      </div>
+      <div class="table-of-contents">
+        <a href="#" class="toc-title">Table of Contents</a>
+        <ul class="toc-items">
+          <li class="toc-item"><a href="">Section #1</a></li>
+          <li class="toc-item"><a href="">Section #2</a></li>
+          <li class="toc-item"><a href="">Section #3</a></li>
+          <li class="toc-item"><a href="">Section #4</a></li>
+          <li class="toc-item"><a href="">Section #5</a></li>
+        </ul>
+      </div>
+    </section>
+  </section>
 </article>
+{% include disqus.html %}
